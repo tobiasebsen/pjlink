@@ -16,9 +16,11 @@ int main(int argc, char *argv[]){
             string option = arg.substr(1);
             if (option == "a") {
                 address = argv[i+1];
+				i++;
             }
             else if (option == "p") {
                 password = argv[i+1];
+				i++;
             }
             else if (option == "l") {
                 logfile = argv[i+1];
@@ -26,11 +28,14 @@ int main(int argc, char *argv[]){
             else if (option == "c") {
                 string param = argv[i+1];
                 if (param == "on")
-                    command = "%1POWR 1";
-                if (param == "off")
-                    command = "%1POWR 0";
-                if (param == "status")
-                    command = "%1POWR ?";
+                    command = "%1POWR 1\r";
+                else if (param == "off")
+                    command = "%1POWR 0\r";
+                else if (param == "status")
+                    command = "%1POWR ?\r";
+				else
+					cout << "Invalid command: " << param << endl;
+				i++;
             }
             else {
                 cout << "Invalid option: " << option << endl;
