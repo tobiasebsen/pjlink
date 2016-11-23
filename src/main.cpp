@@ -7,6 +7,7 @@ int main(int argc, char *argv[]){
     string address = "";
     string password = "";
     string command = "%1POWR ?";
+    string logfile = "";
 
     for (int i=0; i<argc; i++) {
         
@@ -18,6 +19,9 @@ int main(int argc, char *argv[]){
             }
             else if (option == "p") {
                 password = argv[i+1];
+            }
+            else if (option == "l") {
+                logfile = argv[i+1];
             }
             else if (option == "c") {
                 string param = argv[i+1];
@@ -38,6 +42,9 @@ int main(int argc, char *argv[]){
         cout << "Error. No address set" << endl;
         return -1;
     }
+    
+    if (logfile != "")
+        ofLogToFile(ofFilePath::getAbsolutePath(logfile, false), true);
     
     ofxPJControl pjlink;
     pjlink.setup(address);

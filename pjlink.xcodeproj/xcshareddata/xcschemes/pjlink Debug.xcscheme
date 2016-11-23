@@ -63,6 +63,10 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
+            argument = "-l log.txt"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "-a 10.0.0.210"
             isEnabled = "YES">
          </CommandLineArgument>
