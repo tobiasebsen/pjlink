@@ -1,5 +1,9 @@
 .DS_Store
 
+bin/
+obj/
+*.sdf
+
 # Compiled Object files
 *.slo
 *.lo
